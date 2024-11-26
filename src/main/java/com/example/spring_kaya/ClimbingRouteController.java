@@ -1,6 +1,7 @@
 package com.example.spring_kaya;
 
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,12 +27,12 @@ public class ClimbingRouteController {
                 .orElse(ResponseEntity.notFound().build());
     }
     @PostMapping
-    public ClimbingRoute createRoute(@RequestBody ClimbingRoute route) {
+    public ClimbingRoute createRoute(@Valid @RequestBody ClimbingRoute route) {
 
         return climbingRouteRepository.save(route);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<ClimbingRoute> updateRoute(@PathVariable Long id, @RequestBody ClimbingRoute routeDetails) {
+    public ResponseEntity<ClimbingRoute> updateRoute(@PathVariable Long id, @Valid @RequestBody ClimbingRoute routeDetails) {
         return climbingRouteRepository.findById(id)
                 .map(route -> {
                     route.setRouteName(routeDetails.getRouteName());
