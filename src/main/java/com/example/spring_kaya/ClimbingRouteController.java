@@ -38,6 +38,7 @@ public class ClimbingRouteController {
                     route.setLocation(routeDetails.getLocation());
                     route.setRouteDifficulty(routeDetails.getRouteDifficulty());
                     route.setDateCompleted(routeDetails.getDateCompleted());
+                    route.setNotes(routeDetails.getNotes());
                     ClimbingRoute updatedRoute = climbingRouteRepository.save(route);
                     return ResponseEntity.ok(updatedRoute);
                 })
