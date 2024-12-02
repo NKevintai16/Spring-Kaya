@@ -1,6 +1,9 @@
-package com.example.spring_kaya;
+package com.example.spring_kaya.controller;
 
 
+
+import com.example.spring_kaya.entity.ClimbingRoute;
+import com.example.spring_kaya.repository.ClimbingRouteRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

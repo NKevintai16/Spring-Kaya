@@ -1,4 +1,4 @@
-package com.example.spring_kaya;
+package com.example.spring_kaya.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.*;
